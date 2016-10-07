@@ -1,0 +1,119 @@
+<link rel="stylesheet" type="text/css"  media="all" href="CSS/jquery-ui.css">
+<link rel="stylesheet" type="text/css"  media="all" href="CSS/style.css">
+
+<div class="se-pre-con"></div>
+<div Class="brightcove-vidhub-top" id="brightcove-vidhub-top">
+<!---Place Brightcove player code between here--->
+    <div class="brightcove-vid-player" style="max-width:960px;">
+        <div class="myplayer" style="float:left;max-width:600px;padding-right:20px;">
+            <video id="brightcove-videohub-player" data-account="Enter Brightcove account ID" 
+                data-player="Enter Brightcove player ID"
+                data-embed="default" 
+                class="video-js" 
+                controls 
+                style="width: 100%; height: 100%; position: relative !important; top: 0px; bottom: 0px; right: 0px; left: 0px;">
+            </video>
+            <!--Brightcove source code-->
+            <script src="//players.brightcove.net/accountNumber/playerCode_default/index.min.js"></script>
+        </div>
+<!---Place Brightcove player code between here--->
+        <div id="featured-ad">
+          <div id="ad-title">
+            <h5>Advertisement</h5>
+          </div>
+          <div class="ad-image" id="ad-image">Enter coding for ad space</div>
+        </div>
+    </div>
+    <div class="brightcove-vidhub-hide">
+    <!---------------------------------------------
+                video player
+    ---------------------------------------------->
+    <!---------------------------------------------
+                    meta data
+    ---------------------------------------------->
+    </div>
+    <div id="brightcove-vidhub-videoInfo">
+        <div>
+        	<p id="brightcove-vidhub-vidcat"><strong></strong><p>
+        </div>
+        <div id="brightcove-vidhub-meta">  	
+        	<h1 class="brightcove-vidhub-meta-title" id="brightcove-vidhub-meta-title"></h1>            
+        </div>
+        <div class="brightcove-vidhub-timedate" id="brightcove-vidhub-timedate">
+        	<div id="brightcove-vidhub-meta-time" class="brightcove-vidhub-meta-time"></div><div id="brightcove-vidhub-meta-date" class="brightcove-vidhub-meta-date"></div><div class="brightcove-vidhub-opthead" id="brightcove-vidhub-opthead">
+                <div class="brightcove-vidhub-arrow-up">&#9650;</div>
+                <div class="brightcove-vidhub-arrow-down brightcove-vidhub-hide">&#9660;</div>
+            </div><br><br>
+        </div>
+        <div id="brightcove-vidhub-meta-desc" class="brightcove-vidhub-meta-desc"></div>
+        <div id="brightcove-vidhub-sharing" class="brightcove-vidhub-sharing"></div>
+    </div>
+    <div class="brightcove-vidhub-hide">
+    <!---------------------------------------------
+                end of meta data
+    ---------------------------------------------->
+    <!---------------------------------------------
+                    video menu
+    ---------------------------------------------->
+    </div>
+    <div class="brightcove-vidhub-menu">
+        <ul id="brightcove-vidhub-menu">
+            <li><input id="tab0" type="button" class="brightcove-vidhub-button" onclick="processTab(0);" value="Category 1"></li>
+            <li><input id="tab1" type="button" class="brightcove-vidhub-button" onclick="processTab(1);" value="Category 2"></li>
+            <li><input id="tab2" type="button" class="brightcove-vidhub-button" onclick="processTab(2);" value="Category 3"></li>
+            <li><input id="tab3" type="button" class="brightcove-vidhub-button" onclick="processTab(3);" value="Category 4"></li>
+            <li><input id="tab4" type="button" class="brightcove-vidhub-button" onclick="processTab(4);" value="Category 5"></li>
+        </ul>
+        <!---------------------------------------------
+                    mobile menu
+    	---------------------------------------------->
+    	<select class="brightcove-vidhub-mobile-menu" onchange="processTab(value);">
+          <option value="0">Category 1</option>
+          <option value="1">Category 2</option>
+          <option value="2">Category 3</option>
+          <option value="3">Category 4</option>
+          <option value="4">Category 5</option>
+        </select>
+        <!---------------------------------------------
+                    end of mobile menu
+    	---------------------------------------------->
+	</div>
+    <div class="brightcove-vidhub-hide">
+
+    <!---------------------------------------------
+                end of video menu
+    ---------------------------------------------->
+    <!---------------------------------------------
+                    playlists
+    ---------------------------------------------->	
+    </div>
+    <div class="brightcove-vidhub-playlist-wrapper">
+        <ol class="vjs-playlist" id="vjs-playlist"></ol>
+        <div class="brightcove-vidhub-load-container">
+          <div id="loadMore" class="loadMore">Load more</div> 
+        </div>
+    </div>
+</div>
+    <!---------------------------------------------
+                end of playlist
+    ---------------------------------------------->	
+
+<!-- jQuery libraries -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<!-- Javascript code -->
+<script type="text/javascript" src="JS/preloader.js"></script>
+<script type="text/javascript" src="JS/script.js"></script>
+<script type="text/javascript" src="JS/source.js"></script>
+<!---Debugger--->
+<script>
+videojs("brightcove-videohub-player").ready(function(){
+	myPlayer = this;
+        //View the current video object
+	myPlayer.on('loadstart',function(){				
+		console.log('mediainfo', myPlayer.mediainfo);
+	});		
+});
+</script>
