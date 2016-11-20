@@ -2,29 +2,23 @@
 <link rel="stylesheet" type="text/css"  media="all" href="CSS/style.css">
 
 <div class="se-pre-con"></div>
-<div Class="brightcove-vidhub-top" id="brightcove-vidhub-top">
-<!---Place Brightcove player code between here--->
-    <div class="brightcove-vid-player" style="max-width:960px;">
-        <div class="myplayer" style="float:left;max-width:600px;padding-right:20px;">
-            <video id="brightcove-videohub-player" data-account="Enter Brightcove account ID" 
-                data-player="Enter Brightcove player ID"
+<div Class="BCP-vidhub-top" id="BCP-vidhub-top">
+	<div class="BCP-next-previous">
+    	<div id="BCP-prev-span"><button class="BCP-previous-video" id="BCP-previous-button" onclick="previousVideo();_gaq.push(['_trackEvent', 'BCP Video Page', 'Previous-button', 'Previous-button']);"><span class="BCP-next-prev-span" >Previous Video in <span id="BCP-previous-category"></span></span><div class="BCP-previous-title"><span id="BCP-previous-title"></span></div></button></div>
+        <div id="BCP-next-span"><button class="BCP-next-video" id="BCP-next-button" onclick="nextVideo();_gaq.push(['_trackEvent', 'BCP Video Page', 'Next-button', 'Next-button']);"><span class="BCP-next-prev-span" >Next Video in <span id="BCP-next-category"></span></span><div class="BCP-next-title"><span id="BCP-next-title"></span></div></button></div>
+    </div>
+    <div class="BCP-vid-player">    	
+        <div class="myplayer">
+            <video id="BCP-videohub-player" data-account="1848920962" 
+                data-player="rk4JEU3N" 
                 data-embed="default" 
                 class="video-js" 
                 controls 
                 style="width: 100%; height: 100%; position: relative !important; top: 0px; bottom: 0px; right: 0px; left: 0px;">
             </video>
-            <!--Brightcove source code-->
-            <script src="//players.brightcove.net/accountNumber/playerCode_default/index.min.js"></script>
-        </div>
-<!---Place Brightcove player code between here--->
-        <div id="featured-ad">
-          <div id="ad-title">
-            <h5>Advertisement</h5>
-          </div>
-          <div class="ad-image" id="ad-image">Enter coding for ad space</div>
         </div>
     </div>
-    <div class="brightcove-vidhub-hide">
+    <div class="BCP-vidhub-hide">
     <!---------------------------------------------
                 video player
     ---------------------------------------------->
@@ -32,23 +26,22 @@
                     meta data
     ---------------------------------------------->
     </div>
-    <div id="brightcove-vidhub-videoInfo">
-        <div>
-        	<p id="brightcove-vidhub-vidcat"><strong></strong><p>
+    <div id="BCP-vidhub-videoInfo">
+        <div id="BCP-vidhub-meta">  	
+        	<h1 class="BCP-vidhub-meta-title" id="BCP-vidhub-meta-title"></h1>            
         </div>
-        <div id="brightcove-vidhub-meta">  	
-        	<h1 class="brightcove-vidhub-meta-title" id="brightcove-vidhub-meta-title"></h1>            
+        <div class="BCP-vidhub-submeta">
+        	<div class="BCP-vidhub-cat">Category<span id="BCP-vidhub-vidcat"></span>|</div><div id="BCP-vidhub-meta-time" class="BCP-vidhub-meta-time"></div><div class="BCP-vidhub-meta-date">|<span id="BCP-vidhub-meta-date"></span></div>
         </div>
-        <div class="brightcove-vidhub-timedate" id="brightcove-vidhub-timedate">
-        	<div id="brightcove-vidhub-meta-time" class="brightcove-vidhub-meta-time"></div><div id="brightcove-vidhub-meta-date" class="brightcove-vidhub-meta-date"></div><div class="brightcove-vidhub-opthead" id="brightcove-vidhub-opthead">
-                <div class="brightcove-vidhub-arrow-up">&#9650;</div>
-                <div class="brightcove-vidhub-arrow-down brightcove-vidhub-hide">&#9660;</div>
-            </div><br><br>
-        </div>
-        <div id="brightcove-vidhub-meta-desc" class="brightcove-vidhub-meta-desc"></div>
-        <div id="brightcove-vidhub-sharing" class="brightcove-vidhub-sharing"></div>
+        <div class="BCP-vidhub-submeta2">
+        	<div id="BCP-vidhub-meta-desc" class="BCP-vidhub-meta-desc"></div>
+        	<div id="BCP-vidhub-sharing" class="BCP-vidhub-sharing"></div>
+		</div>
     </div>
-    <div class="brightcove-vidhub-hide">
+    <div class="BCP-vidhub-opthead" id="BCP-vidhub-opthead">
+       <button onclick="_gaq.push(['_trackEvent', 'BCP Video Page', 'Show-hide-button', 'Show-hid-button']);"><span class="BCP-vidhub-show">SHOW LESS</span></button>
+    </div>
+    <div class="BCP-vidhub-hide">
     <!---------------------------------------------
                 end of meta data
     ---------------------------------------------->
@@ -56,30 +49,23 @@
                     video menu
     ---------------------------------------------->
     </div>
-    <div class="brightcove-vidhub-menu">
-        <ul id="brightcove-vidhub-menu">
-            <li><input id="tab0" type="button" class="brightcove-vidhub-button" onclick="processTab(0);" value="Category 1"></li>
-            <li><input id="tab1" type="button" class="brightcove-vidhub-button" onclick="processTab(1);" value="Category 2"></li>
-            <li><input id="tab2" type="button" class="brightcove-vidhub-button" onclick="processTab(2);" value="Category 3"></li>
-            <li><input id="tab3" type="button" class="brightcove-vidhub-button" onclick="processTab(3);" value="Category 4"></li>
-            <li><input id="tab4" type="button" class="brightcove-vidhub-button" onclick="processTab(4);" value="Category 5"></li>
+    <div class="BCP-vidhub-menu">
+        <ul id="BCP-vidhub-menu">
+            <li><input id="tab0" type="button" class="BCP-vidhub-button" onclick="processTab(0);_gaq.push(['_trackEvent', 'BCP Video Page', 'Tab: Category 1', 'Tab: Category 1']);" value="Category 1"></li>
+            <li><input id="tab1" type="button" class="BCP-vidhub-button" onclick="processTab(1);_gaq.push(['_trackEvent', 'BCP Video Page', 'Tab: Category 2', 'Tab: Category 2']);" value="Category 2"></li>
+            <li><input id="tab2" type="button" class="BCP-vidhub-button" onclick="processTab(2);_gaq.push(['_trackEvent', 'BCP Video Page', 'Tab: Category 3', 'Tab: Category 3']);" value="Category 3"></li>
+            <li><input id="tab3" type="button" class="BCP-vidhub-button" onclick="processTab(3);_gaq.push(['_trackEvent', 'BCP Video Page', 'Tab: Category 4', 'Tab: Category 4']);" value="Category 4"></li>
+            <li><input id="tab4" type="button" class="BCP-vidhub-button" onclick="processTab(4);_gaq.push(['_trackEvent', 'BCP Video Page', 'Tab: Category 5', 'Tab: Category 5']);" value="Category 5"></li>
         </ul>
-        <!---------------------------------------------
-                    mobile menu
-    	---------------------------------------------->
-    	<select class="brightcove-vidhub-mobile-menu" onchange="processTab(value);">
-          <option value="0">Category 1</option>
-          <option value="1">Category 2</option>
-          <option value="2">Category 3</option>
-          <option value="3">Category 4</option>
-          <option value="4">Category 5</option>
+    	<select class="BCP-vidhub-mobile-menu" onchange="processTab(value);">
+          <option value="0" onclick="_gaq.push(['_trackEvent', 'BCP Video Page', 'Tab: Category 1', 'Tab: Category 1']);">Category 1</option>
+          <option value="1" onclick="_gaq.push(['_trackEvent', 'BCP Video Page', 'Tab: Category 2', 'Tab: Category 2']);">Category 2</option>
+          <option value="2" onclick="_gaq.push(['_trackEvent', 'BCP Video Page', 'Tab: Category 3', 'Tab: Category 3']);">Category 3</option>
+          <option value="3" onclick="_gaq.push(['_trackEvent', 'BCP Video Page', 'Tab: Category 4', 'Tab: Category 4']);">Category 4</option>
+          <option value="4" onclick="_gaq.push(['_trackEvent', 'BCP Video Page', 'Tab: Category 5', 'Tab: Category 5']);">Category 5</option>
         </select>
-        <!---------------------------------------------
-                    end of mobile menu
-    	---------------------------------------------->
 	</div>
-    <div class="brightcove-vidhub-hide">
-
+    <div class="BCP-vidhub-hide">
     <!---------------------------------------------
                 end of video menu
     ---------------------------------------------->
@@ -87,16 +73,16 @@
                     playlists
     ---------------------------------------------->	
     </div>
-    <div class="brightcove-vidhub-playlist-wrapper">
+    <div class="BCP-vidhub-playlist-wrapper">
         <ol class="vjs-playlist" id="vjs-playlist"></ol>
-        <div class="brightcove-vidhub-load-container">
-          <div id="loadMore" class="loadMore">Load more</div> 
+        <div class="BCP-vidhub-load-container">
+          <div><button id="loadMore" class="loadMore" onclick="_gaq.push(['_trackEvent', 'BCP Video Page', 'Load more', 'Load more']);">Load more</button></div> 
         </div>
     </div>
 </div>
-    <!---------------------------------------------
-                end of playlist
-    ---------------------------------------------->	
+<!---------------------------------------------
+      		end of playlist
+---------------------------------------------->	
 
 <!-- jQuery libraries -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -106,14 +92,14 @@
 <!-- Javascript code -->
 <script type="text/javascript" src="JS/preloader.js"></script>
 <script type="text/javascript" src="JS/script.js"></script>
-<script type="text/javascript" src="JS/source.js"></script>
+<script type="text/javascript" src="JS/main.js"></script>
 <!---Debugger--->
 <script>
-videojs("brightcove-videohub-player").ready(function(){
-	myPlayer = this;
-        //View the current video object
-	myPlayer.on('loadstart',function(){				
-		console.log('mediainfo', myPlayer.mediainfo);
-	});		
-});
+//videojs("BCP-videohub-player").ready(function(){
+	//myPlayer = this;
+    //View the current video object
+	//myPlayer.on('loadstart',function(){				
+		//console.log('Playlist array', myPlayer.playlist.currentItem());
+    //});		
+//});
 </script>
